@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Mi Página Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Biblioteca</a></li>
+                    <li><a href="#services">Ayuda</a></li>
+                    <li><a href="#contact">Información</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <footer>
+        <div class="container">
+            <p>Inovacion y tecnologia de la informcion</p>
+        </div>
+    </footer>
+    <main>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="02.html">Punteros y gestión de memoria</a></li>
+                    <li><a href="03.html">Clases y objetos en C++</a></li>
+                    <li><a href="05.html">Manejo de archivos en C y C++
+                    </a></li>
+                    <li><a href="06.html">Estructuras de datos</a></li>
+                    <li><a href="07.html">Compilación y enlace</a></li>
+                    <li><a href="08.html">Funciones y sobrecarga de operadores</a></li>
+                    <li><a href="09.html">Bibliotecas estándar de C y C++</a></li>
+                    <li><a href="010.html">Manejo de excepciones en C++</a></li>
+                </ul>
+            </nav>
+        </div>
+        </section>
+    </main>
+
+
+
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>...</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <section id="home">
+            <div class="container">
+                <h2>La Revolución Digital</h2>
+            </div>
+        </section>
+        <div class="container">
+
+            <h2>Bibliotecas Estándar de C y C++</h2>
+
+            <h3>Bibliotecas Estándar de C</h3>
+            <p>Las bibliotecas estándar de C proporcionan una amplia gama de funciones para manejar operaciones básicas como entrada/salida, manipulación de cadenas, y manejo de memoria. A continuación se enumeran algunas de las bibliotecas más comunes:</p>
+            
+            <h4><code>&lt;stdio.h&gt;</code></h4>
+            <p>Proporciona funciones para la entrada y salida estándar, como <code>printf</code> y <code>scanf</code>.</p>
+            <pre>
+                <code>
+                    #include &lt;stdio.h&gt;
+            
+                    int main() {
+                        printf("Hola, Mundo!\n");
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4><code>&lt;stdlib.h&gt;</code></h4>
+            <p>Incluye funciones para manejo de memoria, control de procesos, y conversiones de cadenas, como <code>malloc</code>, <code>free</code>, y <code>atoi</code>.</p>
+            <pre>
+                <code>
+                    #include &lt;stdlib.h&gt;
+            
+                    int main() {
+                        int *p = (int *)malloc(sizeof(int));
+                        *p = 10;
+                        printf("Valor: %d\n", *p);
+                        free(p);
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4><code>&lt;string.h&gt;</code></h4>
+            <p>Proporciona funciones para manipulación de cadenas, como <code>strlen</code>, <code>strcpy</code>, y <code>strcmp</code>.</p>
+            <pre>
+                <code>
+                    #include &lt;string.h&gt;
+            
+                    int main() {
+                        char str1[] = "Hola";
+                        char str2[] = "Mundo";
+                        strcat(str1, str2);
+                        printf("Cadena concatenada: %s\n", str1);
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4><code>&lt;math.h&gt;</code></h4>
+            <p>Incluye funciones matemáticas como <code>sqrt</code>, <code>pow</code>, y <code>sin</code>.</p>
+            <pre>
+                <code>
+                    #include &lt;math.h&gt;
+            
+                    int main() {
+                        double raiz = sqrt(16.0);
+                        printf("Raíz cuadrada de 16: %f\n", raiz);
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4><code>&lt;time.h&gt;</code></h4>
+            <p>Proporciona funciones para manipulación del tiempo y la fecha, como <code>time</code> y <code>localtime</code>.</p>
+            <pre>
+                <code>
+                    #include &lt;time.h&gt;
+            
+                    int main() {
+                        time_t ahora = time(NULL);
+                        struct tm *tm_info = localtime(&ahora);
+                        printf("Fecha y hora actual: %s", asctime(tm_info));
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h3>Bibliotecas Estándar de C++</h3>
+            <p>Las bibliotecas estándar de C++ extienden las funcionalidades de C y añaden características orientadas a objetos, manejo de cadenas, colecciones, y mucho más. Algunas de las bibliotecas estándar más importantes son:</p>
+            
+            <h4><code>&lt;iostream&gt;</code></h4>
+            <p>Proporciona soporte para entrada y salida mediante objetos como <code>std::cin</code>, <code>std::cout</code>, y <code>std::cerr</code>.</p>
+            <pre>
+                <code>
+                    #include &lt;iostream&gt;
+            
+                    int main() {
+                        std::cout &lt;&lt; "Hola, Mundo!" &lt;&lt; std::endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4><code>&lt;string&gt;</code></h4>
+            <p>Incluye la clase <code>std::string</code> para manipulación de cadenas de caracteres.</p>
+            <pre>
+                <code>
+                    #include &lt;string&gt;
+            
+                    int main() {
+                        std::string saludo = "Hola";
+                        saludo += " Mundo";
+                        std::cout &lt;&lt; saludo &lt;&lt; std::endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4><code>&lt<vector&gt;</code></h4>
+            <p>Proporciona la clase <code>std::vector</code>, una estructura de datos dinámica similar a un array.</p>
+            <pre>
+                <code>
+                    #include &lt;vector&gt;
+            
+                    int main() {
+                        std::vector<int> numeros = {1, 2, 3, 4, 5};
+                        for (int num : numeros) {
+                            std::cout &lt;&lt; num &lt;&lt; " ";
+                        }
+                        std::cout &lt;&lt; std::endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4><code>&lt<algorithm&gt;</code></h4>
+            <p>Incluye funciones algoritmicas como <code>sort</code>, <code>find</code>, y <code>copy</code>.</p>
+            <pre>
+                <code>
+                    #include &lt;algorithm&gt;
+                    #include &lt;vector&gt;
+            
+                    int main() {
+                        std::vector<int> numeros = {5, 3, 1, 4, 2};
+                        std::sort(numeros.begin(), numeros.end());
+                        for (int num : numeros) {
+                            std::cout &lt;&lt; num &lt;&lt; " ";
+                        }
+                        std::cout &lt;&lt; std::endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4><code>&lt;map&gt;</code></h4>
+            <p>Proporciona la clase <code>std::map</code>, una estructura de datos asociativa basada en árboles balanceados.</p>
+            <pre>
+                <code>
+                    #include &lt;map&gt;
+            
+                    int main() {
+                        std::map<std::string, int> edades;
+                        edades["Alice"] = 30;
+                        edades["Bob"] = 25;
+                        for (const auto &par : edades) {
+                            std::cout &lt;&lt; par.first &lt;&lt; ": " &lt;&lt; par.second &lt;&lt; std::endl;
+                        }
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+</body>
+
+</html>

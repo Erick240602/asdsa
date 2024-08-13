@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Mi Página Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Biblioteca</a></li>
+                    <li><a href="#services">Ayuda</a></li>
+                    <li><a href="#contact">Información</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <footer>
+        <div class="container">
+            <p>Inovacion y tecnologia de la informcion</p>
+        </div>
+    </footer>
+    <main>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#home">La Revolución Digital</a></li>
+                    <li><a href="#about">El futuro de C y C++</a></li>
+                    <li><a href="#services">Los lenguajes de programación C y C++
+                    </a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        </section>
+    </main>
+
+
+
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>...</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <section id="home">
+            <div class="container">
+                <h2>La Revolución Digital</h2>
+            </div>
+        </section>
+        <div class="container">
+
+            <h2>Manejo de Archivos en C y C++</h2>
+            <p>El manejo de archivos permite a los programas leer y escribir datos en archivos. En C y C++, esto se realiza mediante funciones y clases específicas para entrada/salida de archivos.</p>
+            
+            <h3>En C</h3>
+            <p>En C, se utilizan las funciones de la biblioteca estándar <code>stdio.h</code> para manejar archivos. Estas funciones permiten abrir, leer, escribir y cerrar archivos.</p>
+            <pre>
+                <code>
+                    #include &lt;stdio.h&gt;
+            
+                    int main() {
+                        // Abrir un archivo para escritura
+                        FILE *archivo = fopen("archivo.txt", "w");
+            
+                        if (archivo == NULL) {
+                            perror("Error al abrir el archivo");
+                            return 1;
+                        }
+            
+                        // Escribir en el archivo
+                        fprintf(archivo, "Hola, mundo!\n");
+            
+                        // Cerrar el archivo
+                        fclose(archivo);
+            
+                        // Abrir un archivo para lectura
+                        archivo = fopen("archivo.txt", "r");
+            
+                        if (archivo == NULL) {
+                            perror("Error al abrir el archivo");
+                            return 1;
+                        }
+            
+                        char buffer[100];
+                        // Leer del archivo
+                        while (fgets(buffer, sizeof(buffer), archivo) != NULL) {
+                            printf("%s", buffer);
+                        }
+            
+                        // Cerrar el archivo
+                        fclose(archivo);
+            
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h3>En C++</h3>
+            <p>En C++, se utilizan las clases de la biblioteca estándar <code>fstream</code> para manejar archivos. Estas clases permiten un manejo más orientado a objetos de la entrada/salida de archivos.</p>
+            <pre>
+                <code>
+                    #include &lt;iostream&gt;
+                    #include &lt;fstream&gt;
+            
+                    int main() {
+                        // Abrir un archivo para escritura
+                        std::ofstream archivo("archivo.txt");
+            
+                        if (!archivo) {
+                            std::cerr &lt;&lt; "Error al abrir el archivo para escritura" &lt;&lt; std::endl;
+                            return 1;
+                        }
+            
+                        // Escribir en el archivo
+                        archivo &lt;&lt; "Hola, mundo!" &lt;&lt; std::endl;
+            
+                        // Cerrar el archivo
+                        archivo.close();
+            
+                        // Abrir un archivo para lectura
+                        std::ifstream archivo_lectura("archivo.txt");
+            
+                        if (!archivo_lectura) {
+                            std::cerr &lt;&lt; "Error al abrir el archivo para lectura" &lt;&lt; std::endl;
+                            return 1;
+                        }
+            
+                        std::string linea;
+                        // Leer del archivo
+                        while (std::getline(archivo_lectura, linea)) {
+                            std::cout &lt;&lt; linea &lt;&lt; std::endl;
+                        }
+            
+                        // Cerrar el archivo
+                        archivo_lectura.close();
+            
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+</body>
+
+</html>

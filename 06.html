@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Mi Página Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Biblioteca</a></li>
+                    <li><a href="#services">Ayuda</a></li>
+                    <li><a href="#contact">Información</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <footer>
+        <div class="container">
+            <p>Inovacion y tecnologia de la informcion</p>
+        </div>
+    </footer>
+    <main>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="02.html">Punteros y gestión de memoria</a></li>
+                    <li><a href="03.html">Clases y objetos en C++</a></li>
+                    <li><a href="05.html">Manejo de archivos en C y C++
+                    </a></li>
+                    <li><a href="06.html">Estructuras de datos</a></li>
+                    <li><a href="07.html">Compilación y enlace</a></li>
+                    <li><a href="08.html">Funciones y sobrecarga de operadores</a></li>
+                    <li><a href="09.html">Bibliotecas estándar de C y C++</a></li>
+                    <li><a href="010.html">Manejo de excepciones en C++</a></li>
+                </ul>
+            </nav>
+        </div>
+        </section>
+    </main>
+
+
+
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>...</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <section id="home">
+            <div class="container">
+                <h2>La Revolución Digital</h2>
+            </div>
+        </section>
+        <div class="container">
+            <h2>Estructuras de Datos en C y C++</h2>
+            <p>Las estructuras de datos son fundamentales en la programación, ya que permiten almacenar y organizar datos de manera eficiente. A continuación, se presentan ejemplos de implementación de varias estructuras de datos en C y C++.</p>
+            
+            <h3>Listas Enlazadas</h3>
+            
+            <h4>En C</h4>
+            <p>Una lista enlazada es una colección de nodos, donde cada nodo contiene un dato y un puntero al siguiente nodo en la lista.</p>
+            <pre>
+                <code>
+                    #include &lt;stdio.h&gt;
+                    #include &lt;stdlib.h&gt;
+            
+                    typedef struct Nodo {
+                        int dato;
+                        struct Nodo *siguiente;
+                    } Nodo;
+            
+                    void insertarAlPrincipio(Nodo **cabeza, int dato) {
+                        Nodo *nuevoNodo = (Nodo *)malloc(sizeof(Nodo));
+                        nuevoNodo-&gt;dato = dato;
+                        nuevoNodo-&gt;siguiente = *cabeza;
+                        *cabeza = nuevoNodo;
+                    }
+            
+                    void imprimirLista(Nodo *cabeza) {
+                        Nodo *actual = cabeza;
+                        while (actual != NULL) {
+                            printf("%d &lt;- ", actual-&gt;dato);
+                            actual = actual-&gt;siguiente;
+                        }
+                        printf("NULL\n");
+                    }
+            
+                    int main() {
+                        Nodo *cabeza = NULL;
+                        insertarAlPrincipio(&cabeza, 10);
+                        insertarAlPrincipio(&cabeza, 20);
+                        insertarAlPrincipio(&cabeza, 30);
+                        imprimirLista(cabeza);
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4>En C++</h4>
+            <p>En C++, se puede utilizar una clase para representar un nodo en una lista enlazada.</p>
+            <pre>
+                <code>
+                    #include &lt;iostream&gt;
+            
+                    class Nodo {
+                    public:
+                        int dato;
+                        Nodo *siguiente;
+            
+                        Nodo(int d) : dato(d), siguiente(nullptr) {}
+                    };
+            
+                    void insertarAlPrincipio(Nodo *&cabeza, int dato) {
+                        Nodo *nuevoNodo = new Nodo(dato);
+                        nuevoNodo-&gt;siguiente = cabeza;
+                        cabeza = nuevoNodo;
+                    }
+            
+                    void imprimirLista(Nodo *cabeza) {
+                        Nodo *actual = cabeza;
+                        while (actual != nullptr) {
+                            std::cout &lt;&lt; actual-&gt;dato &lt;&lt; " &lt;- ";
+                            actual = actual-&gt;siguiente;
+                        }
+                        std::cout &lt;&lt; "NULL" &lt;&lt; std::endl;
+                    }
+            
+                    int main() {
+                        Nodo *cabeza = nullptr;
+                        insertarAlPrincipio(cabeza, 10);
+                        insertarAlPrincipio(cabeza, 20);
+                        insertarAlPrincipio(cabeza, 30);
+                        imprimirLista(cabeza);
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h3>Pilas</h3>
+            
+            <h4>En C</h4>
+            <p>Una pila es una estructura de datos basada en el principio LIFO (Last In, First Out).</p>
+            <pre>
+                <code>
+                    #include &lt;stdio.h&gt;
+                    #include &lt;stdlib.h&gt;
+            
+                    #define MAX 100
+            
+                    typedef struct {
+                        int datos[MAX];
+                        int cima;
+                    } Pila;
+            
+                    void inicializarPila(Pila *p) {
+                        p-&gt;cima = -1;
+                    }
+            
+                    int estaVacia(Pila *p) {
+                        return p-&gt;cima == -1;
+                    }
+            
+                    int estaLlena(Pila *p) {
+                        return p-&gt;cima == MAX - 1;
+                    }
+            
+                    void apilar(Pila *p, int dato) {
+                        if (estaLlena(p)) {
+                            printf("Pila llena\n");
+                            return;
+                        }
+                        p-&gt;datos[++(p-&gt;cima)] = dato;
+                    }
+            
+                    int desapilar(Pila *p) {
+                        if (estaVacia(p)) {
+                            printf("Pila vacía\n");
+                            return -1;
+                        }
+                        return p-&gt;datos[(p-&gt;cima)--];
+                    }
+            
+                    int main() {
+                        Pila p;
+                        inicializarPila(&p);
+                        apilar(&p, 10);
+                        apilar(&p, 20);
+                        printf("%d desapilado\n", desapilar(&p));
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4>En C++</h4>
+            <p>En C++, se puede usar una clase para implementar una pila con la misma lógica LIFO.</p>
+            <pre>
+                <code>
+                    #include &lt;iostream&gt;
+            
+                    class Pila {
+                    private:
+                        static const int MAX = 100;
+                        int datos[MAX];
+                        int cima;
+                    public:
+                        Pila() : cima(-1) {}
+            
+                        bool estaVacia() {
+                            return cima == -1;
+                        }
+            
+                        bool estaLlena() {
+                            return cima == MAX - 1;
+                        }
+            
+                        void apilar(int dato) {
+                            if (estaLlena()) {
+                                std::cout &lt;&lt; "Pila llena" &lt;&lt; std::endl;
+                                return;
+                            }
+                            datos[++cima] = dato;
+                        }
+            
+                        int desapilar() {
+                            if (estaVacia()) {
+                                std::cout &lt;&lt; "Pila vacía" &lt;&lt; std::endl;
+                                return -1;
+                            }
+                            return datos[cima--];
+                        }
+                    };
+            
+                    int main() {
+                        Pila p;
+                        p.apilar(10);
+                        p.apilar(20);
+                        std::cout &lt;&lt; p.desapilar() &lt;&lt; " desapilado" &lt;&lt; std::endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h3>Colas</h3>
+            
+            <h4>En C</h4>
+            <p>Una cola es una estructura de datos basada en el principio FIFO (First In, First Out).</p>
+            <pre>
+                <code>
+                    #include &lt;stdio.h&gt;
+                    #include &lt;stdlib.h&gt;
+            
+                    #define MAX 100
+            
+                    typedef struct {
+                        int datos[MAX];
+                        int frente, fin;
+                    } Cola;
+            
+                    void inicializarCola(Cola *c) {
+                        c-&gt;frente = c-&gt;fin = 0;
+                    }
+            
+                    int estaVacia(Cola *c) {
+                        return c-&gt;frente == c-&gt;fin;
+                    }
+            
+                    int estaLlena(Cola *c) {
+                        return (c-&gt;fin + 1) % MAX == c-&gt;frente;
+                    }
+            
+                    void encolar(Cola *c, int dato) {
+                        if (estaLlena(c)) {
+                            printf("Cola llena\n");
+                            return;
+                        }
+                        c-&gt;datos[c-&gt;fin] = dato;
+                        c-&gt;fin = (c-&gt;fin + 1) % MAX;
+                    }
+            
+                    int desencolar(Cola *c) {
+                        if (estaVacia(c)) {
+                            printf("Cola vacía\n");
+                            return -1;
+                        }
+                        int dato = c-&gt;datos[c-&gt;frente];
+                        c-&gt;frente = (c-&gt;frente + 1) % MAX;
+                        return dato;
+                    }
+            
+                    int main() {
+                        Cola c;
+                        inicializarCola(&c);
+                        encolar(&c, 10);
+                        encolar(&c, 20);
+                        printf("%d desencolado\n", desencolar(&c));
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4>En C++</h4>
+            <p>En C++, se puede utilizar una clase para implementar una cola con la misma lógica FIFO.</p>
+            <pre>
+                <code>
+                    #include &lt;iostream&gt;
+            
+                    class Cola {
+                    private:
+                        static const int MAX = 100;
+                        int datos[MAX];
+                        int frente, fin;
+                    public:
+                        Cola() : frente(0), fin(0) {}
+            
+                        bool estaVacia() {
+                            return frente == fin;
+                        }
+            
+                        bool estaLlena() {
+                            return (fin + 1) % MAX == frente;
+                        }
+            
+                        void encolar(int dato) {
+                            if (estaLlena()) {
+                                std::cout &lt;&lt; "Cola llena" &lt;&lt; std::endl;
+                                return;
+                            }
+                            datos[fin] = dato;
+                            fin = (fin + 1) % MAX;
+                        }
+            
+                        int desencolar() {
+                            if (estaVacia()) {
+                                std::cout &lt;&lt; "Cola vacía" &lt;&lt; std::endl;
+                                return -1;
+                            }
+                            int dato = datos[frente];
+                            frente = (frente + 1) % MAX;
+                            return dato;
+                        }
+                    };
+            
+                    int main() {
+                        Cola c;
+                        c.encolar(10);
+                        c.encolar(20);
+                        std::cout &lt;&lt; c.desencolar() &lt;&lt; " desencolado" &lt;&lt; std::endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h3>Árboles</h3>
+            
+            <h4>En C</h4>
+            <p>Un árbol es una estructura jerárquica donde cada nodo tiene un valor y referencias a sus nodos hijos.</p>
+            <pre>
+                <code>
+                    #include &lt;stdio.h&gt;
+                    #include &lt;stdlib.h&gt;
+            
+                    typedef struct Nodo {
+                        int dato;
+                        struct Nodo *izquierdo, *derecho;
+                    } Nodo;
+            
+                    Nodo* crearNodo(int dato) {
+                        Nodo *nuevoNodo = (Nodo *)malloc(sizeof(Nodo));
+                        nuevoNodo-&gt;dato = dato;
+                        nuevoNodo-&gt;izquierdo = NULL;
+                        nuevoNodo-&gt;derecho = NULL;
+                        return nuevoNodo;
+                    }
+            
+                    void inorder(Nodo *raiz) {
+                        if (raiz != NULL) {
+                            inorder(raiz-&gt;izquierdo);
+                            printf("%d ", raiz-&gt;dato);
+                            inorder(raiz-&gt;derecho);
+                        }
+                    }
+            
+                    int main() {
+                        Nodo *raiz = crearNodo(1);
+                        raiz-&gt;izquierdo = crearNodo(2);
+                        raiz-&gt;derecho = crearNodo(3);
+                        raiz-&gt;izquierdo-&gt;izquierdo = crearNodo(4);
+                        raiz-&gt;izquierdo-&gt;derecho = crearNodo(5);
+                        printf("Recorrido Inorden: ");
+                        inorder(raiz);
+                        printf("\n");
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4>En C++</h4>
+            <p>En C++, se puede utilizar una clase para implementar un árbol binario.</p>
+            <pre>
+                <code>
+                    #include &lt;iostream&gt;
+            
+                    class Nodo {
+                    public:
+                        int dato;
+                        Nodo *izquierdo, *derecho;
+            
+                        Nodo(int d) : dato(d), izquierdo(nullptr), derecho(nullptr) {}
+                    };
+            
+                    void inorder(Nodo *raiz) {
+                        if (raiz != nullptr) {
+                            inorder(raiz-&gt;izquierdo);
+                            std::cout &lt;&lt; raiz-&gt;dato &lt;&lt; " ";
+                            inorder(raiz-&gt;derecho);
+                        }
+                    }
+            
+                    int main() {
+                        Nodo *raiz = new Nodo(1);
+                        raiz-&gt;izquierdo = new Nodo(2);
+                        raiz-&gt;derecho = new Nodo(3);
+                        raiz-&gt;izquierdo-&gt;izquierdo = new Nodo(4);
+                        raiz-&gt;izquierdo-&gt;derecho = new Nodo(5);
+                        std::cout &lt;&lt; "Recorrido Inorden: ";
+                        inorder(raiz);
+                        std::cout &lt;&lt; std::endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h3>Tablas Hash</h3>
+            
+            <h4>En C</h4>
+            <p>Una tabla hash es una estructura que utiliza una función hash para mapear claves a ubicaciones en una tabla.</p>
+            <pre>
+                <code>
+                    #include &lt;stdio.h&gt;
+                    #include &lt;stdlib.h&gt;
+            
+                    #define TAMANO 10
+            
+                    typedef struct {
+                        int clave;
+                        int valor;
+                    } Entrada;
+            
+                    Entrada tabla[TAMANO] = {0};
+            
+                    int hash(int clave) {
+                        return clave % TAMANO;
+                    }
+            
+                    void insertar(int clave, int valor) {
+                        int indice = hash(clave);
+                        tabla[indice].clave = clave;
+                        tabla[indice].valor = valor;
+                    }
+            
+                    int buscar(int clave) {
+                        int indice = hash(clave);
+                        if (tabla[indice].clave == clave) {
+                            return tabla[indice].valor;
+                        }
+                        return -1; // Indica que la clave no fue encontrada
+                    }
+            
+                    int main() {
+                        insertar(10, 100);
+                        insertar(20, 200);
+                        printf("Valor para clave 10: %d\n", buscar(10));
+                        printf("Valor para clave 20: %d\n", buscar(20));
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h4>En C++</h4>
+            <p>En C++, se puede usar la clase <code>std::unordered_map</code> para implementar una tabla hash.</p>
+            <pre>
+                <code>
+                    #include &lt;iostream&gt;
+                    #include &lt;unordered_map&gt;
+            
+                    int main() {
+                        std::unordered_map<int, int> tabla;
+                        tabla[10] = 100;
+                        tabla[20] = 200;
+            
+                        std::cout &lt;&lt; "Valor para clave 10: " &lt;&lt; tabla[10] &lt;&lt; std::endl;
+                        std::cout &lt;&lt; "Valor para clave 20: " &lt;&lt; tabla[20] &lt;&lt; std::endl;
+            
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+          
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+</body>
+
+</html>

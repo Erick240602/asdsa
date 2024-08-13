@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Mi Página Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Biblioteca</a></li>
+                    <li><a href="#services">Ayuda</a></li>
+                    <li><a href="#contact">Información</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <footer>
+        <div class="container">
+            <p>Inovacion y tecnologia de la informcion</p>
+        </div>
+    </footer>
+    <main>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="02.html">Punteros y gestión de memoria</a></li>
+                    <li><a href="03.html">Clases y objetos en C++</a></li>
+                    <li><a href="05.html">Manejo de archivos en C y C++
+                    </a></li>
+                    <li><a href="06.html">Estructuras de datos</a></li>
+                    <li><a href="07.html">Compilación y enlace</a></li>
+                    <li><a href="08.html">Funciones y sobrecarga de operadores</a></li>
+                    <li><a href="09.html">Bibliotecas estándar de C y C++</a></li>
+                    <li><a href="010.html">Manejo de excepciones en C++</a></li>
+                </ul>
+            </nav>
+        </div>
+        </section>
+    </main>
+
+
+
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>...</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <section id="home">
+            <div class="container">
+                <h2>La Revolución Digital</h2>
+            </div>
+        </section>
+        <div class="container">
+
+            <h2>Compilación y Enlace en C y C++</h2>
+            <p>La compilación y el enlace son dos fases cruciales en el proceso de construcción de programas en C y C++. Estas fases transforman el código fuente en un programa ejecutable.</p>
+            
+            <h3>Compilación</h3>
+            <p>La compilación es el proceso de traducir el código fuente, escrito en C o C++, en código objeto, que es un formato intermedio que la máquina puede entender. Este proceso es llevado a cabo por un compilador.</p>
+            
+            <h4>Proceso de Compilación</h4>
+            <pre>
+                <code>
+                    // Compilación de un archivo fuente C
+                    gcc -c archivo.c -o archivo.o
+            
+                    // Compilación de un archivo fuente C++
+                    g++ -c archivo.cpp -o archivo.o
+                </code>
+            </pre>
+            <p>En estos comandos, <code>-c</code> indica al compilador que solo realice la compilación y no el enlace. El archivo <code>archivo.o</code> es el archivo de código objeto generado.</p>
+            
+            <h3>Enlace</h3>
+            <p>El enlace es el proceso de combinar uno o más archivos de código objeto (y a veces bibliotecas) en un solo archivo ejecutable. Esto se hace mediante un enlazador.</p>
+            
+            <h4>Proceso de Enlace</h4>
+            <pre>
+                <code>
+                    // Enlace de archivos objeto para crear un ejecutable
+                    gcc archivo1.o archivo2.o -o programa
+            
+                    // Enlace de archivos objeto C++ para crear un ejecutable
+                    g++ archivo1.o archivo2.o -o programa
+                </code>
+            </pre>
+            <p>En estos comandos, <code>archivo1.o</code> y <code>archivo2.o</code> son archivos de código objeto y <code>programa</code> es el archivo ejecutable resultante.</p>
+            
+            <h4>Compilación y Enlace en un Solo Paso</h4>
+            <p>También es posible compilar y enlazar en un solo paso:</p>
+            <pre>
+                <code>
+                    // Compilación y enlace de un archivo fuente C
+                    gcc archivo.c -o programa
+            
+                    // Compilación y enlace de un archivo fuente C++
+                    g++ archivo.cpp -o programa
+                </code>
+            </pre>
+            
+            <h4>Errores de Compilación y Enlace</h4>
+            <p>Durante la compilación, se pueden producir errores de sintaxis y errores de semántica, mientras que durante el enlace, se pueden encontrar errores como referencias no definidas a funciones o variables.</p>
+            <pre>
+                <code>
+                    // Ejemplo de error de compilación
+                    gcc -c archivo.c // Puede mostrar errores si hay problemas en el código fuente
+            
+                    // Ejemplo de error de enlace
+                    gcc archivo1.o archivo2.o -o programa // Puede mostrar errores si hay referencias no resueltas
+                </code>
+            </pre>
+            
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+</body>
+
+</html>

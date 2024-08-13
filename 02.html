@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Mi Página Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Biblioteca</a></li>
+                    <li><a href="#services">Ayuda</a></li>
+                    <li><a href="#contact">Información</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <footer>
+        <div class="container">
+            <p>Inovacion y tecnologia de la informcion</p>
+        </div>
+    </footer>
+    <main>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="02.html">Punteros y gestión de memoria</a></li>
+                    <li><a href="03.html">Clases y objetos en C++</a></li>
+                    <li><a href="05.html">Manejo de archivos en C y C++
+                    </a></li>
+                    <li><a href="06.html">Estructuras de datos</a></li>
+                    <li><a href="07.html">Compilación y enlace</a></li>
+                    <li><a href="08.html">Funciones y sobrecarga de operadores</a></li>
+                    <li><a href="09.html">Bibliotecas estándar de C y C++</a></li>
+                    <li><a href="010.html">Manejo de excepciones en C++</a></li>
+                </ul>
+            </nav>
+        </div>
+        </section>
+    </main>
+
+
+
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>...</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <section id="home">
+            <div class="container">
+                <h2>La Revolución Digital</h2>
+            </div>
+        </section>
+        <div class="container">
+
+            <h2>Punteros</h2>
+            <p>Un puntero es una variable que almacena la dirección de memoria de otra variable. Los punteros permiten manipular directamente la memoria y manejar estructuras de datos dinámicas en C y C++.</p>
+            <pre>
+                <code>
+                    // Declaración de un puntero
+                    int *ptr;
+            
+                    // Asignación de la dirección de memoria de una variable
+                    int num = 10;
+                    ptr = &num;
+            
+                    // Desreferenciación para obtener el valor almacenado en la dirección
+                    int value = *ptr; // value ahora tiene el valor 10
+            
+                    // Puntero nulo
+                    int *nullPtr = NULL; // en C
+                    int *nullPtr = nullptr; // en C++
+                </code>
+            </pre>
+            
+            <h2>Gestión de Memoria</h2>
+            <p>La gestión de memoria dinámica se realiza en C y C++ usando funciones de la biblioteca estándar en C y los operadores new y delete en C++.</p>
+            
+            <h3>En C:</h3>
+            <pre>
+                <code>
+                    // Asignación dinámica de memoria
+                    int *arr = (int *)malloc(10 * sizeof(int)); // Asigna memoria para un array de 10 enteros
+            
+                    // Uso de la memoria
+                    // ...
+            
+                    // Liberar la memoria
+                    free(arr);
+                </code>
+            </pre>
+            
+            <h3>En C++:</h3>
+            <pre>
+                <code>
+                    // Asignación dinámica de memoria para un solo objeto
+                    int *num = new int;
+                    *num = 5;
+            
+                    // Liberar la memoria
+                    delete num;
+            
+                    // Asignación dinámica de memoria para un array de objetos
+                    int *arr = new int[10];
+            
+                    // Liberar la memoria del array
+                    delete[] arr;
+                </code>
+            </pre>
+            
+            <h2>Problemas Comunes</h2>
+            <p>Al trabajar con punteros y memoria dinámica, es importante estar consciente de ciertos problemas comunes:</p>
+            <pre>
+                <code>
+                    // Fugas de memoria: No liberar memoria dinámica correctamente
+                    // Acceso a memoria no válida: Acceder a memoria liberada o no asignada
+                    // Punteros colgantes: Punteros que apuntan a memoria liberada
+                </code>
+            </pre>
+            
+            <h2>Buenas Prácticas</h2>
+            <p>Para evitar problemas y escribir código seguro y eficiente:</p>
+            <pre>
+                <code>
+                    // Inicializa los punteros
+                    int *ptr = nullptr;
+            
+                    // Libera la memoria asignada
+                    delete ptr;
+            
+                    // Usa punteros inteligentes en C++
+                    std::unique_ptr<int> smartPtr = std::make_unique<int>(5);
+                </code>
+            </pre>
+            
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+</body>
+
+</html>

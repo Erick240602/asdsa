@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Mi Página Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Biblioteca</a></li>
+                    <li><a href="#services">Ayuda</a></li>
+                    <li><a href="#contact">Información</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <footer>
+        <div class="container">
+            <p>Inovacion y tecnologia de la informcion</p>
+        </div>
+    </footer>
+    <main>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="02.html">Punteros y gestión de memoria</a></li>
+                    <li><a href="03.html">Clases y objetos en C++</a></li>
+                    <li><a href="05.html">Manejo de archivos en C y C++
+                    </a></li>
+                    <li><a href="06.html">Estructuras de datos</a></li>
+                    <li><a href="07.html">Compilación y enlace</a></li>
+                    <li><a href="08.html">Funciones y sobrecarga de operadores</a></li>
+                    <li><a href="09.html">Bibliotecas estándar de C y C++</a></li>
+                    <li><a href="010.html">Manejo de excepciones en C++</a></li>
+                </ul>
+            </nav>
+        </div>
+        </section>
+    </main>
+
+
+
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>...</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <section id="home">
+            <div class="container">
+                <h2>La Revolución Digital</h2>
+            </div>
+        </section>
+        <div class="container">
+
+            <h2>Funciones y Sobrecarga de Operadores en C++</h2>
+
+            <h3>Funciones</h3>
+            <p>Las funciones en C++ permiten encapsular un bloque de código que realiza una tarea específica. Pueden aceptar parámetros y devolver un valor.</p>
+            
+            <h4>Definición y Declaración</h4>
+            <pre>
+                <code>
+                    // Declaración de una función
+                    int suma(int a, int b);
+            
+                    // Definición de la función
+                    int suma(int a, int b) {
+                        return a + b;
+                    }
+            
+                    int main() {
+                        int resultado = suma(5, 3);
+                        std::cout &lt;&lt; "Resultado: " &lt;&lt; resultado &lt;&lt; std::endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            <p>En el ejemplo anterior, la función <code>suma</code> toma dos enteros como parámetros y devuelve su suma.</p>
+            
+            <h4>Funciones Sobrecargadas</h4>
+            <p>La sobrecarga de funciones permite definir varias funciones con el mismo nombre pero con diferentes parámetros.</p>
+            <pre>
+                <code>
+                    // Sobrecarga de funciones
+                    int suma(int a, int b) {
+                        return a + b;
+                    }
+            
+                    double suma(double a, double b) {
+                        return a + b;
+                    }
+            
+                    int main() {
+                        int resultadoInt = suma(5, 3);
+                        double resultadoDouble = suma(5.5, 3.3);
+                        std::cout &lt;&lt; "Resultado entero: " &lt;&lt; resultadoInt &lt;&lt; std::endl;
+                        std::cout &lt;&lt; "Resultado double: " &lt;&lt; resultadoDouble &lt;&lt; std::endl;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            <p>En este ejemplo, la función <code>suma</code> está sobrecargada para aceptar tanto enteros como dobles.</p>
+            
+            <h3>Sobrecarga de Operadores</h3>
+            <p>La sobrecarga de operadores permite redefinir el comportamiento de los operadores para tipos de datos definidos por el usuario.</p>
+            
+            <h4>Definición de Operadores Sobrecargados</h4>
+            <p>Para sobrecargar un operador, se define una función miembro o una función amiga que usa el operador como nombre.</p>
+            <pre>
+                <code>
+                    #include &lt;iostream&gt;
+            
+                    class Vector {
+                    private:
+                        int x, y;
+                    public:
+                        Vector(int x, int y) : x(x), y(y) {}
+            
+                        // Sobrecarga del operador +
+                        Vector operator+(const Vector &v) const {
+                            return Vector(x + v.x, y + v.y);
+                        }
+            
+                        void mostrar() const {
+                            std::cout &lt;&lt; "(" &lt;&lt; x &lt;&lt; ", " &lt;&lt; y &lt;&lt; ")" &lt;&lt; std::endl;
+                        }
+                    };
+            
+                    int main() {
+                        Vector v1(1, 2);
+                        Vector v2(3, 4);
+                        Vector v3 = v1 + v2; // Usa el operador + sobrecargado
+                        v3.mostrar();
+                        return 0;
+                    }
+                </code>
+            </pre>
+            <p>En este ejemplo, el operador <code>+</code> está sobrecargado para sumar dos objetos de la clase <code>Vector</code>.</p>
+            
+            <h4>Operadores Miembros y Amigo</h4>
+            <p>Los operadores pueden ser definidos como funciones miembros (como en el ejemplo anterior) o como funciones amigas para acceder a los datos privados.</p>
+            <pre>
+                <code>
+                    class Vector {
+                    private:
+                        int x, y;
+                    public:
+                        Vector(int x, int y) : x(x), y(y) {}
+            
+                        // Sobrecarga del operador << como función amiga
+                        friend std::ostream& operator<<(std::ostream &os, const Vector &v) {
+                            os &lt;&lt; "(" &lt;&lt; v.x &lt;&lt; ", " &lt;&lt; v.y &lt;&lt; ")";
+                            return os;
+                        }
+                    };
+            
+                    int main() {
+                        Vector v(1, 2);
+                        std::cout &lt;&lt; v &lt;&lt; std::endl; // Usa el operador << sobrecargado
+                        return 0;
+                    }
+                </code>
+            </pre>
+            <p>En este ejemplo, el operador <code>&lt;&lt;</code> está sobrecargado como una función amiga para permitir la impresión de objetos <code>Vector</code> usando <code>std::cout</code>.</p>
+            
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+</body>
+
+</html>

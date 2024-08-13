@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Mi Página Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Biblioteca</a></li>
+                    <li><a href="#services">Ayuda</a></li>
+                    <li><a href="#contact">Información</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <footer>
+        <div class="container">
+            <p>Inovacion y tecnologia de la informcion</p>
+        </div>
+    </footer>
+    <main>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="02.html">Punteros y gestión de memoria</a></li>
+                    <li><a href="03.html">Clases y objetos en C++</a></li>
+                    <li><a href="05.html">Manejo de archivos en C y C++
+                    </a></li>
+                    <li><a href="06.html">Estructuras de datos</a></li>
+                    <li><a href="07.html">Compilación y enlace</a></li>
+                    <li><a href="08.html">Funciones y sobrecarga de operadores</a></li>
+                    <li><a href="09.html">Bibliotecas estándar de C y C++</a></li>
+                    <li><a href="010.html">Manejo de excepciones en C++</a></li>
+                </ul>
+            </nav>
+        </div>
+        </section>
+    </main>
+
+
+
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>...</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <section id="home">
+            <div class="container">
+                <h2>La Revolución Digital</h2>
+            </div>
+        </section>
+        <div class="container">
+
+            <h2>Clases y Objetos en C++</h2>
+            <p>En C++, la programación orientada a objetos (POO) se basa en la creación y manipulación de clases y objetos. Las clases son plantillas para crear objetos, y los objetos son instancias de clases.</p>
+            
+            <h3>Definición de una Clase</h3>
+            <p>Una clase define un tipo de dato complejo que puede contener datos (miembros de datos) y funciones (métodos) que operan sobre esos datos.</p>
+            <pre>
+                <code>
+                    class MiClase {
+                    private:
+                        int dato; // Miembro de datos privado
+            
+                    public:
+                        // Constructor
+                        MiClase(int valor) : dato(valor) {}
+            
+                        // Método público
+                        void mostrarDato() {
+                            std::cout &lt;&lt; "Dato: " &lt;&lt; dato &lt;&lt; std::endl;
+                        }
+            
+                        // Método para modificar el dato
+                        void setDato(int valor) {
+                            dato = valor;
+                        }
+                    };
+                </code>
+            </pre>
+            
+            <h3>Creación de Objetos</h3>
+            <p>Un objeto es una instancia de una clase. Se puede crear un objeto utilizando la sintaxis del constructor de la clase.</p>
+            <pre>
+                <code>
+                    int main() {
+                        // Crear un objeto de MiClase
+                        MiClase obj(10);
+            
+                        // Usar los métodos del objeto
+                        obj.mostrarDato(); // Muestra: Dato: 10
+                        obj.setDato(20);
+                        obj.mostrarDato(); // Muestra: Dato: 20
+            
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h3>Encapsulamiento</h3>
+            <p>El encapsulamiento es un principio de la POO que restringe el acceso a algunos de los datos de un objeto y los protege de modificaciones externas no deseadas. Esto se logra usando especificadores de acceso como <code>private</code>, <code>protected</code>, y <code>public</code>.</p>
+            <pre>
+                <code>
+                    class MiClase {
+                    private:
+                        int dato; // Miembro de datos privado
+            
+                    public:
+                        // Métodos públicos para acceder y modificar dato
+                        void setDato(int valor) {
+                            dato = valor;
+                        }
+            
+                        int getDato() {
+                            return dato;
+                        }
+                    };
+                </code>
+            </pre>
+            
+            <h3>Herencia</h3>
+            <p>La herencia permite que una clase herede características (miembros y métodos) de otra clase. Esto facilita la reutilización del código y la creación de jerarquías de clases.</p>
+            <pre>
+                <code>
+                    class Base {
+                    public:
+                        void mostrar() {
+                            std::cout &lt;&lt; "Clase Base" &lt;&lt; std::endl;
+                        }
+                    };
+            
+                    class Derivada : public Base {
+                    public:
+                        void mostrar() {
+                            std::cout &lt;&lt; "Clase Derivada" &lt;&lt; std::endl;
+                        }
+                    };
+            
+                    int main() {
+                        Derivada obj;
+                        obj.mostrar(); // Muestra: Clase Derivada
+            
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+            <h3>Polimorfismo</h3>
+            <p>El polimorfismo permite que las funciones se comporten de manera diferente según el tipo de objeto que las llama. Esto se logra utilizando funciones virtuales y sobrecarga de operadores.</p>
+            <pre>
+                <code>
+                    class Base {
+                    public:
+                        virtual void mostrar() {
+                            std::cout &lt;&lt; "Clase Base" &lt;&lt; std::endl;
+                        }
+                    };
+            
+                    class Derivada : public Base {
+                    public:
+                        void mostrar() override {
+                            std::cout &lt;&lt; "Clase Derivada" &lt;&lt; std::endl;
+                        }
+                    };
+            
+                    int main() {
+                        Base *ptr = new Derivada();
+                        ptr->mostrar(); // Muestra: Clase Derivada
+            
+                        delete ptr;
+                        return 0;
+                    }
+                </code>
+            </pre>
+            
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+</body>
+
+</html>
